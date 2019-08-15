@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>ABU TALHA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 500px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+        }
+
+        .title {
+        color: grey;
+        font-size: 18px;
+        }
+
+        .button {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #3498DB;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 20px;
+        font-weight: bold;
+        }
+
+        a {
+        text-decoration: none;
+        font-size: 22px;
+        color: black;
+        }
+
+        button:hover, a:hover {
+        opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body ng-controller="ProfileCtrl">
+    <div class="card">
+
+    <img  style="width:100%"  alt="Profile pic" ng-src="{{img}}" />
+    <input type='file' ng-model-instant onchange="angular.element(this).scope().imageUpload(event)" />
+
+    <br>
+    <h5><b>{{username}}</b></h5>
+    <h5><b>{{useremail}}</b></h5>
+    <p class="title">Full Stack Web Developer</p>
+    <p class="button" style="color: green;" ng-click="uploadProfilePic()">Update Profile</p>
+    <p class="button" style="color: red;"><a href="#!/home">Cancel</a></p>
+    </div>
+</body>
+</html>

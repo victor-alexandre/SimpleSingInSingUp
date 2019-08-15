@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>    
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Registratrion Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body ng-controller="RegisterCtrl">
+
+    <div class="container">
+        <div class="jumbotron col-md-10 col-md-offset-5" style=" padding-top: 0; padding-bottom: 0;">
+            <h2 style="text-align: center;">Simple Registratrion Page</h2>
+        </div>
+        <form role="form" name="registerForm" novalidate="">
+            <div class="form-goup col-md-10 col-md-offset-5">
+                <label for="username">User Name</label>
+                <input type="text" name="username" ng-model="user.name" class="form-control" placeholder="username" required=""/>
+            </div>
+            <div class="form-goup col-md-10 col-md-offset-5" ng-class="{'has-error': registerForm.email.$invalid && registerForm.email.$touched}">
+                <label for="email">Email Adress</label>
+                <input type="email" name="email" ng-model="user.email" class="form-control" placeholder="Email Adress" required=""/>
+                <small class="help-block" style="color :red;" ng-show="registerForm.email.$invalid && registerForm.email.$touched">Please enter a valid Email Address</small>
+            </div>
+            <div class="form-goup col-md-10 col-md-offset-5" ng-class="{'has-error': registerForm.password.$invalid && registerForm.password.$touched}">
+                <label for="password">Password</label>
+                <input type="password" name="password" ng-model="user.password" class="form-control" placeholder="Password" ng-minlength=8 required=""/>
+                <small class="help-block" style="color :red;" ng-show="registerForm.password.$error.minlength && registerForm.password.$touched">Please enter a password with at 
+                    least 8 characters</small>
+            </div>    
+            <div class="form-goup col-md-10 col-md-offset-5" ng-class="{'has-error': registerForm.confirmPassword.$invalid && registerForm.confirmPassword.$touched}">
+                    <label for="confirmPassword">Confirm your Password</label>
+                    <input type="password" name="confirmPassword" ng-model="user.confirmPassword" class="form-control" placeholder="Confirm Password" ng-minlength=8 required="" ng-change="validatePassword()"/>
+                    <small class="help-block" style="color :red;" ng-show="(passwordError || registerForm.confirmPassword.$error.minlength) && registerForm.confirmPassword.$touched">The passwords must be equal</small>
+            </div>          
+            <div class="checkbox col-md-10 col-md-offset-5">
+                <label><a href="#!/login">Already have an account? Log in here</a></label>
+            </div>
+            <div class="col-md-10 col-md-offset-5">
+                <p ng-show="errMsg" style="color :red;">{{errorMessage}}</p>
+                <button type="submit" class="btn btn-lg btn-primary btn-block" ng-disabled="registerForm.$invalid" ng-click="signUp()">Register</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
