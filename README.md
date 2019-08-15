@@ -1,4 +1,5 @@
-# Simple web project built on the angular-seed https://github.com/angular/angular-seed
+# Simple web project built on the angular-seed 
+## https://github.com/angular/angular-seed
 
 ## The features are:
 
