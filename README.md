@@ -8,7 +8,7 @@
 * Login in
 * Changing profile picture
 
-Just download the project and run on terminal "npm install", if it doesn't work try with **sudo** "sudo npm install" and then "npm start". 
+Just download the project and run on terminal "npm install", if it doesn't work try with **sudo** "sudo npm install", and then "npm start". 
 
 
 
