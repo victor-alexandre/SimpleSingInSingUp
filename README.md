@@ -8,9 +8,8 @@
 * Login in
 * Changing profile picture
 
-Just download the project and run on terminal "npm install" and then "sudo npm start". 
+Just download the project and run on terminal "npm install", if it doesn't work try with **sudo** "sudo npm install" and then "npm start". 
 
-If the command doesn't run on the first time, create an folder called **"lib"** inside **app** folder: **SimpleSingInSingUp/app/lib** and then copy the following libraries from **node_modules** folder into **lib** folder: angular, angularfire, angular-loader, angular-mocks, angular-route, bootstrap, firebase, html5-boilerplate and jquery.
 
 
 
